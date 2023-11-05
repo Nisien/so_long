@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 01:38:34 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 01:43:54 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/05 23:06:31 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static void	ft_unset_ent(t_data *data, t_ent *ent)
 
 void	ft_unset_img(t_data *data)
 {
+	mlx_destroy_image(data->mlx_ptr, data->img.ptr);
 	ft_unset_obj(data, &(data->skin)->empty);
 	ft_unset_obj(data, &(data->skin)->wall);
 	ft_unset_obj(data, &(data->skin)->exit);

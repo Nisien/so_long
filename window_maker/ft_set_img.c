@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:54:10 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 01:53:51 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/05 22:11:44 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ static void	ft_ent_to_img(t_data *data, t_ent *ent)
 
 void	ft_set_img(t_data *data)
 {
+	data->img.ptr = mlx_new_image(data->mlx_ptr, data->win_x, data->win_y);
+	data->img.addr = mlx_get_data_addr(data->img.ptr, &data->img.bpp,
+			&data->img.len, &data->img.endian);
 	ft_obj_to_img(data, &(data->skin)->empty);
 	ft_obj_to_img(data, &(data->skin)->wall);
 	ft_obj_to_img(data, &(data->skin)->exit);

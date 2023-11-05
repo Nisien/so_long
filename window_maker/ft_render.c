@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:08:14 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 01:29:27 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/05 22:22:01 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ static void	ft_put_map(t_data *data, char area)
 	else if (area == PLAYER)
 		ft_put_ent(data, &(data->skin)->player);
 	else if (area == ITEM)
+	{
+		ft_put_img(data, (data->skin)->empty.sp_arr[0]);
 		ft_put_obj(data, &(data->skin)->item);
+	}
 	else if (area == MOB)
 		ft_put_ent(data, &(data->skin)->mob);
 	else if (area == EXIT)
-		ft_put_exit(data);
+		ft_put_img(data, (data->skin)->exit.sp_arr[0]);
 	else if (area == EMPTY)
 		ft_put_img(data, (data->skin)->empty.sp_arr[0]);
 	else
@@ -51,5 +54,6 @@ int	ft_render(t_data *data)
 		}
 		i++;
 	}
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.ptr, 0, 0);
 	return (OK);
 }

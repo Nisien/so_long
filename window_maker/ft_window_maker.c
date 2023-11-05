@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:49:59 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 02:03:57 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/05 23:09:51 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,14 @@ static void	ft_get_window_size(t_data *data)
 	data->win_y = IMG_SIZE * (iy - 1);
 }
 
+int	close_hook(int keysym, t_data *data)
+{
+	(void)keysym;
+	(void)data;
+	exit(OK);
+	return (OK);
+}
+
 void	ft_window_maker(t_skin *skin)
 {
 	t_data	data;
@@ -59,6 +67,7 @@ void	ft_window_maker(t_skin *skin)
 	if (!data.win_ptr)
 		ft_winmaker_error(&data);
 	mlx_loop_hook(data.mlx_ptr, &ft_render, &data);
+	mlx_hook(data.win_ptr, 17, 1L << 0, &close_hook, &data);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &ft_set_handle, &data);
 	ft_set_img(&data);
 	mlx_loop(data.mlx_ptr);
