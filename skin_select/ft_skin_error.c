@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 01:20:23 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 01:48:11 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/07 08:08:36 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ static void	ft_free_ent(t_ent ent)
 	ft_free_obj(ent.mv_down);
 	ft_free_obj(ent.mv_left);
 	ft_free_obj(ent.mv_right);
+	ft_free_obj(ent.atk_up);
+	ft_free_obj(ent.atk_down);
+	ft_free_obj(ent.atk_left);
+	ft_free_obj(ent.atk_right);
 }
 
 void	ft_free_skin(t_skin *skin)

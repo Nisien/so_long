@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:41:22 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/04 04:10:55 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/07 21:54:39 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ enum	e_map
 {
 	EMPTY = 48,
 	WALL,
+	TEMPTY,
 	ITEM = 67,
 	EXIT = 69,
 	MOB = 77,
 	PLAYER = 80,
+	PEXIT,
+	PATK,
+	PATKEX,
 	CHECKED = 54,
 	CHEXIT,
 	CHITEM,
@@ -31,6 +35,20 @@ enum	e_result
 {
 	KO,
 	OK
+};
+
+enum	e_coordinate
+{
+	X,
+	Y
+};
+
+enum	e_direction
+{
+	RIGHT,
+	LEFT,
+	UP,
+	DOWN
 };
 
 enum	e_map_error
@@ -57,6 +75,7 @@ typedef struct s_obj
 
 typedef struct s_ent
 {
+	int		dir;
 	t_obj	up;
 	t_obj	down;
 	t_obj	left;
@@ -65,6 +84,10 @@ typedef struct s_ent
 	t_obj	mv_down;
 	t_obj	mv_left;
 	t_obj	mv_right;
+	t_obj	atk_up;
+	t_obj	atk_down;
+	t_obj	atk_left;
+	t_obj	atk_right;
 }	t_ent;
 
 typedef struct s_skin

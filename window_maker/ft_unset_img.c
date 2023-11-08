@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 01:38:34 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 23:06:31 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/07 08:05:17 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ static void	ft_unset_ent(t_data *data, t_ent *ent)
 	ft_unset_obj(data, &ent->mv_down);
 	ft_unset_obj(data, &ent->mv_left);
 	ft_unset_obj(data, &ent->mv_right);
+	ft_unset_obj(data, &ent->atk_up);
+	ft_unset_obj(data, &ent->atk_down);
+	ft_unset_obj(data, &ent->atk_left);
+	ft_unset_obj(data, &ent->atk_right);
 }
 
 void	ft_unset_img(t_data *data)

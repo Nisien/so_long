@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 02:08:50 by nrossa            #+#    #+#             */
-/*   Updated: 2023/10/31 12:26:39 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/07 19:43:38 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ t_list	**ft_get_map(char *map_name)
 
 	if (!map_name)
 		return (NULL);
+	fd = open(map_name, O_RDONLY);
+	if (fd < 0)
+		ft_map_error(BAD_NAME, NULL, NULL);
 	map = malloc(sizeof(t_list **));
 	if (!map)
 		return (NULL);
-	fd = open(map_name, O_RDONLY);
-	if (fd < 0)
-		ft_map_error(BAD_NAME, map, NULL);
 	if (!ft_check_extension(map_name))
 		ft_map_error(BAD_EXTENSION, map, NULL);
 	ft_map_to_lst(map, fd);

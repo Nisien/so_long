@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 05:26:32 by nrossa            #+#    #+#             */
-/*   Updated: 2023/10/31 13:25:47 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/08 05:43:31 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_map_is_rectangle(t_list *map)
 
 	width = ft_strlen(map->content);
 	height = ft_lstsize(map);
-	if (width <= height)
+	if (width == height)
 		return (KO);
 	while (map)
 	{
@@ -30,7 +30,7 @@ int	ft_map_is_rectangle(t_list *map)
 	return (OK);
 }
 
-void	ft_find_player_pos(char **arr, int *row, int *column)
+void	ft_find_player_pos(char **arr, int *x, int *y)
 {
 	int	i;
 	int	j;
@@ -41,10 +41,11 @@ void	ft_find_player_pos(char **arr, int *row, int *column)
 		j = 0;
 		while (arr[i][j])
 		{
-			if (arr[i][j] == PLAYER)
+			if (arr[i][j] == PLAYER || arr[i][j] == PEXIT
+				|| arr[i][j] == PATK || arr[i][j] == PATKEX)
 			{
-				*row = i;
-				*column = j;
+				*y = i;
+				*x = j;
 			}
 			j++;
 		}

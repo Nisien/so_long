@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:45:31 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/02 21:59:56 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/06 04:19:51 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	ft_find_path(char **arr, int nb)
 
 	player_row = 0;
 	player_column = 0;
-	ft_find_player_pos(arr, &player_row, &player_column);
+	ft_find_player_pos(arr, &player_column, &player_row);
 	if (ft_find_exit(arr, player_row, player_column))
 	{
 		ft_reset_map(arr);

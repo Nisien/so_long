@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:04:00 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/04 05:17:39 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/07 08:20:47 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,10 @@ static void	ft_check_ent(t_skin *skin, t_ent *ent, char *dir_name)
 	ft_check_ent_dir(skin, &ent->mv_down, dir_name, "/down/move");
 	ft_check_ent_dir(skin, &ent->mv_left, dir_name, "/left/move");
 	ft_check_ent_dir(skin, &ent->mv_right, dir_name, "/right/move");
+	ft_check_ent_dir(skin, &ent->atk_up, dir_name, "/up/attack");
+	ft_check_ent_dir(skin, &ent->atk_down, dir_name, "/down/attack");
+	ft_check_ent_dir(skin, &ent->atk_left, dir_name, "/left/attack");
+	ft_check_ent_dir(skin, &ent->atk_right, dir_name, "/right/attack");
 }
 
 void	ft_check_skin(t_skin *skin)

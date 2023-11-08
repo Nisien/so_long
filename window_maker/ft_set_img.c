@@ -6,7 +6,7 @@
 /*   By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:54:10 by nrossa            #+#    #+#             */
-/*   Updated: 2023/11/05 22:11:44 by nrossa           ###   ########.fr       */
+/*   Updated: 2023/11/07 08:16:40 by nrossa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ static void	ft_ent_to_img(t_data *data, t_ent *ent)
 	ft_obj_to_img(data, &ent->mv_down);
 	ft_obj_to_img(data, &ent->mv_left);
 	ft_obj_to_img(data, &ent->mv_right);
+	ft_obj_to_img(data, &ent->atk_up);
+	ft_obj_to_img(data, &ent->atk_down);
+	ft_obj_to_img(data, &ent->atk_left);
+	ft_obj_to_img(data, &ent->atk_right);
 }
 
 void	ft_set_img(t_data *data)

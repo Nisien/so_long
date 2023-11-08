@@ -6,7 +6,7 @@
 #    By: nrossa <nrossa@student.42perpignan.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 12:54:21 by nrossa            #+#    #+#              #
-#    Updated: 2023/11/05 01:43:32 by nrossa           ###   ########.fr        #
+#    Updated: 2023/11/08 04:33:46 by nrossa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ HDR = so_long.h define.h $(MM_DIR)map_management.h $(WM_DIR)window_maker.h $(SS_
 SRC = so_long.c $(addprefix $(MM_DIR), $(MM_SRC)) $(addprefix $(WM_DIR), $(WM_SRC)) $(addprefix $(SS_DIR), $(SS_SRC))
 MM_SRC = ft_check_map.c ft_get_map.c ft_check_extension.c ft_find_path.c ft_map_error.c ft_map_utils.c
 SS_SRC = ft_skin_select.c ft_skin_error.c ft_check_skin.c ft_check_sprite.c ft_skin_utils.c
-WM_SRC = ft_window_maker.c ft_set_img.c ft_render.c ft_handle.c ft_put_img.c ft_unset_img.c
+WM_SRC = ft_window_maker.c ft_set_img.c ft_put_img.c ft_draw_img.c ft_unset_img.c ft_set_map.c ft_render.c ft_hook.c ft_move.c ft_attack.c ft_winmaker_utils.c
 OBJS = $(SRC:.c=.o)
 
 BLACK = \033[30m
